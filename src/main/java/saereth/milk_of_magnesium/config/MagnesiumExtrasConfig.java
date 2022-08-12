@@ -14,12 +14,7 @@ public class MagnesiumExtrasConfig
 {
     public static ForgeConfigSpec ConfigSpec;
 
-    public static ConfigValue<String> fadeInQuality;
-
-    public static ConfigValue<String> fpsCounterMode;
-    public static ConfigValue<Integer> fpsCounterPosition;
     public static ForgeConfigSpec.ConfigValue<Integer> cloudHeight;
-
 
     public static ConfigValue<Integer> maxTileEntityRenderDistanceSquare;
     public static ConfigValue<Integer> maxTileEntityRenderDistanceY;
@@ -30,8 +25,6 @@ public class MagnesiumExtrasConfig
     public static ConfigValue<Boolean> fog;
     public static ConfigValue<Boolean> enableDistanceChecks;
 
-    public static ConfigValue<Boolean> hideJEI;
-
     // Ok Zoomer
     public static ZoomValues zoomValues = new ZoomValues();
     public static ConfigValue<Boolean> lowerZoomSensitivity;
@@ -40,9 +33,6 @@ public class MagnesiumExtrasConfig
     public static ConfigValue<String> cinematicCameraMode;
     public static ConfigValue<Boolean> zoomScrolling;
     public static ConfigValue<Boolean> zoomOverlay;
-
-
-    public static ForgeConfigSpec.EnumValue<FullscreenMode> fullScreenMode;
 
 
     // Total Darkness
@@ -71,15 +61,7 @@ public class MagnesiumExtrasConfig
 
         builder.Block("Misc", b -> {
             cloudHeight = b.define("Cloud Height [Raw, Default 256]", 256);
-            fadeInQuality =  b.define("Chunk Fade In Quality (OFF, FAST, FANCY)", "FANCY");
             fog = b.define("Render Fog", true);
-            hideJEI = b.define("Hide JEI Until Searching", true);
-            fullScreenMode = b.defineEnum("Use Borderless Fullscreen", FullscreenMode.FULLSCREEN);
-        });
-
-        builder.Block("FPS Counter", b -> {
-            fpsCounterMode = b.define("Display FPS Counter (OFF, SIMPLE, ADVANCED)", "ADVANCED");
-            fpsCounterPosition = b.define("FPS Counter Distance", 12);
         });
 
         builder.Block("Entity Distance", b -> {
@@ -181,12 +163,6 @@ public class MagnesiumExtrasConfig
         private DarknessOption(float value) {
             this.value = value;
         }
-    }
-
-    public enum FullscreenMode {
-        WINDOWED,
-        BORDERLESS,
-        FULLSCREEN
     }
 
     public enum ZoomTransitionOptions {
