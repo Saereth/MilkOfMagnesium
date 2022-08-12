@@ -49,12 +49,6 @@ public class SodiumGameOptionsMixin
     )
     private static void Inject(CallbackInfoReturnable<OptionPage> cir, List<OptionGroup> groups)
     {
-//        groups.removeIf((optionGroup) ->
-//            optionGroup
-//                    .getOptions()
-//                    .stream()
-//                    .anyMatch((option) -> Objects.equals(option.getName(), "Display FPS"))
-//        );
 
         Option<MagnesiumExtrasConfig.Complexity> displayFps =  OptionImpl.createBuilder(MagnesiumExtrasConfig.Complexity.class, sodiumOpts)
                 .setName(Component.nullToEmpty("Display FPS"))
