@@ -12,11 +12,11 @@ import saereth.milk_of_magnesium.MagnesiumExtras;
 @Mod.EventBusSubscriber(value = Dist.CLIENT)
 public class KeyboardInput
 {
-    public static final KeyMapping zoomKey = new KeyMapping("key.zoom",
+    public static final KeyMapping zoomKey = new KeyMapping(MagnesiumExtras.MODID + "key.zoom" ,
             KeyConflictContext.IN_GAME,
             KeyModifier.NONE,
             InputConstants.Type.KEYSYM,
             GLFW.GLFW_KEY_C,
-            "key.category." + MagnesiumExtras.MODID);
+            MagnesiumExtras.MODID + "key.category");
 
 }
