@@ -12,6 +12,7 @@ import me.jellysquid.mods.sodium.client.gui.options.storage.SodiumOptionsStorage
 import net.minecraft.client.Options;
 import com.mojang.blaze3d.platform.Window;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.language.I18n;
 import net.minecraft.network.chat.Component;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -50,8 +51,8 @@ public class SodiumGameOptionsMixin
 
 
         OptionImpl<SodiumGameOptions, Boolean> totalDarkness = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
-                .setName(Component.nullToEmpty("True Darkness"))
-                .setTooltip(Component.nullToEmpty("Makes the rest of the world more realistically dark. Does not effect daytime or torch light."))
+                .setName(Component.nullToEmpty(I18n.get("milk_of_magnesium.ture_darkness.name")))
+                .setTooltip(Component.nullToEmpty(I18n.get("milk_of_magnesium.ture_darkness.tooltip")))
                 .setControl(TickBoxControl::new)
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.trueDarknessEnabled.set(value),
@@ -60,13 +61,13 @@ public class SodiumGameOptionsMixin
                 .build();
 
         Option<MagnesiumExtrasConfig.DarknessOption> totalDarknessSetting =  OptionImpl.createBuilder(MagnesiumExtrasConfig.DarknessOption.class, sodiumOpts)
-                .setName(Component.nullToEmpty("True Darkness Mode"))
-                .setTooltip(Component.nullToEmpty("Controls how dark is considered true darkness."))
+                .setName(Component.nullToEmpty(I18n.get("milk_of_magnesium.ture_darkness_mode.name")))
+                .setTooltip(Component.nullToEmpty(I18n.get("milk_of_magnesium.ture_darkness_mode.tooltip")))
                 .setControl((option) -> new CyclingControl<>(option, MagnesiumExtrasConfig.DarknessOption.class, new Component[] {
-                        Component.nullToEmpty("Pitch Black"),
-                        Component.nullToEmpty("Really Dark"),
-                        Component.nullToEmpty("Dark"),
-                        Component.nullToEmpty("Dim")
+                        Component.nullToEmpty(I18n.get("milk_of_magnesium.options.pitch_black")),
+                        Component.nullToEmpty(I18n.get("milk_of_magnesium.options.really_dark")),
+                        Component.nullToEmpty(I18n.get("milk_of_magnesium.options.dark")),
+                        Component.nullToEmpty(I18n.get("milk_of_magnesium.options.dim"))
                 }))
                 .setBinding(
                         (opts, value) -> MagnesiumExtrasConfig.darknessOption.set(value),
@@ -83,8 +84,8 @@ public class SodiumGameOptionsMixin
 
 
         OptionImpl<SodiumGameOptions, Boolean> fog = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
-                .setName(Component.nullToEmpty("Enable fog"))
-                .setTooltip(Component.nullToEmpty("Toggles off all fog in the overworld."))
+                .setName(Component.nullToEmpty(I18n.get("milk_of_magnesium.fog.name")))
+                .setTooltip(Component.nullToEmpty(I18n.get("milk_of_magnesium.fog.tooltip")))
                 .setControl(TickBoxControl::new)
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.fog.set(value),
@@ -93,9 +94,9 @@ public class SodiumGameOptionsMixin
                 .build();
 
         OptionImpl<SodiumGameOptions, Integer> cloudHeight = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
-                .setName(Component.nullToEmpty("Cloud Height"))
-                .setTooltip(Component.nullToEmpty("Raises cloud height."))
-                .setControl((option) -> new SliderControl(option, 64, 364, 4, ControlValueFormatter.translateVariable("Blocks")))
+                .setName(Component.nullToEmpty(I18n.get("milk_of_magnesium.cloud_height.name")))
+                .setTooltip(Component.nullToEmpty(I18n.get("milk_of_magnesium.cloud_height.tooltip")))
+                .setControl((option) -> new SliderControl(option, 64, 364, 4, ControlValueFormatter.translateVariable("milk_of_magnesium.options.unit.blocks")))
                 .setBinding(
                         (options, value) -> {
                             MagnesiumExtrasConfig.cloudHeight.set(value);
@@ -112,8 +113,8 @@ public class SodiumGameOptionsMixin
                 .build());
 
         OptionImpl<SodiumGameOptions, Boolean> enableDistanceChecks = OptionImpl.createBuilder(Boolean.class, sodiumOpts)
-                .setName(Component.nullToEmpty("Enable Max Entity Distance"))
-                .setTooltip(Component.nullToEmpty("Toggles off entity culling."))
+                .setName(Component.nullToEmpty(I18n.get("milk_of_magnesium.enable_max_entity_distance.name")))
+                .setTooltip(Component.nullToEmpty(I18n.get("milk_of_magnesium.enable_max_entity_distance.tooltip")))
                 .setControl(TickBoxControl::new)
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.enableDistanceChecks.set(value),
@@ -129,9 +130,9 @@ public class SodiumGameOptionsMixin
         );
 
         OptionImpl<SodiumGameOptions, Integer> maxEntityDistance = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
-                .setName(Component.nullToEmpty("Max Entity Distance"))
-                .setTooltip(Component.nullToEmpty("Hides and does not tick entities beyond this many blocks. Huge performance increase, especially around modded farms."))
-                .setControl((option) -> new SliderControl(option, 16, 192, 8, ControlValueFormatter.translateVariable("Blocks")))
+                .setName(Component.nullToEmpty(I18n.get("milk_of_magnesium.max_entity_distance.name")))
+                .setTooltip(Component.nullToEmpty(I18n.get("milk_of_magnesium.max_entity_distance.tooltip")))
+                .setControl((option) -> new SliderControl(option, 16, 192, 8, ControlValueFormatter.translateVariable("milk_of_magnesium.options.unit.blocks")))
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.maxEntityRenderDistanceSquare.set(value * value),
                         (options) ->  Math.toIntExact(Math.round(Math.sqrt(MagnesiumExtrasConfig.maxEntityRenderDistanceSquare.get()))))
@@ -139,9 +140,9 @@ public class SodiumGameOptionsMixin
                 .build();
 
         OptionImpl<SodiumGameOptions, Integer> maxEntityDistanceVertical = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
-                .setName(Component.nullToEmpty("Vertical Entity Distance"))
-                .setTooltip(Component.nullToEmpty("Hides and does not tick entities underneath this many blocks, improving performance above caves. This should ideally be set lower than the horizontal distance."))
-                .setControl((option) -> new SliderControl(option, 16, 64, 4, ControlValueFormatter.translateVariable("Blocks")))
+                .setName(Component.nullToEmpty(I18n.get("milk_of_magnesium.vertical_entity_distance.name")))
+                .setTooltip(Component.nullToEmpty(I18n.get("milk_of_magnesium.vertical_entity_distance.tooltip")))
+                .setControl((option) -> new SliderControl(option, 16, 64, 4, ControlValueFormatter.translateVariable("milk_of_magnesium.options.unit.blocks")))
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.maxEntityRenderDistanceY.set(value ),
                         (options) -> MagnesiumExtrasConfig.maxEntityRenderDistanceY.get())
@@ -157,9 +158,9 @@ public class SodiumGameOptionsMixin
         );
 
         OptionImpl<SodiumGameOptions, Integer> maxTileEntityDistance = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
-                .setName(Component.nullToEmpty("Max Tile Distance"))
-                .setTooltip(Component.nullToEmpty("Hides block entities beyond this many blocks. Huge performance increase, especially around lots of modded machines."))
-                .setControl((option) -> new SliderControl(option, 16, 256, 8, ControlValueFormatter.translateVariable("Blocks")))
+                .setName(Component.nullToEmpty(I18n.get("milk_of_magnesium.max_tile_distance.name")))
+                .setTooltip(Component.nullToEmpty(I18n.get("milk_of_magnesium.max_tile_distance.tooltip")))
+                .setControl((option) -> new SliderControl(option, 16, 256, 8, ControlValueFormatter.translateVariable("milk_of_magnesium.options.unit.blocks")))
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.maxTileEntityRenderDistanceSquare.set(value * value),
                         (options) -> Math.toIntExact(Math.round(Math.sqrt(MagnesiumExtrasConfig.maxTileEntityRenderDistanceSquare.get()))))
@@ -167,9 +168,9 @@ public class SodiumGameOptionsMixin
                 .build();
 
         OptionImpl<SodiumGameOptions, Integer> maxTileEntityDistanceVertical = OptionImpl.createBuilder(Integer.TYPE, sodiumOpts)
-                .setName(Component.nullToEmpty("Vertical Tile Distance"))
-                .setTooltip(Component.nullToEmpty("Hides block entities underneath this many blocks, improving performance above caves (if you have your machines in caves, for some reason). This should ideally be set lower than the horizontal distance."))
-                .setControl((option) -> new SliderControl(option, 16, 64, 4, ControlValueFormatter.translateVariable("Blocks")))
+                .setName(Component.nullToEmpty(I18n.get("milk_of_magnesium.vertical_tile_distance.name")))
+                .setTooltip(Component.nullToEmpty(I18n.get("milk_of_magnesium.vertical_tile_distance.tooltip")))
+                .setControl((option) -> new SliderControl(option, 16, 64, 4, ControlValueFormatter.translateVariable("milk_of_magnesium.options.unit.blocks")))
                 .setBinding(
                         (options, value) -> MagnesiumExtrasConfig.maxTileEntityRenderDistanceY.set(value ),
                         (options) -> MagnesiumExtrasConfig.maxTileEntityRenderDistanceY.get())

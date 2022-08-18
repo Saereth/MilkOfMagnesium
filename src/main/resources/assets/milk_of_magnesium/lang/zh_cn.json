@@ -1,0 +1,31 @@
+{
+  "milk_of_magnesium.key.zoom": "缩放",
+  "milk_of_magnesium.key.category": "Milk of Magnesium",
+
+  "milk_of_magnesium.options.pitch_black": "漆黑一片",
+  "milk_of_magnesium.options.really_dark": "真正的黑",
+  "milk_of_magnesium.options.dark": "暗黑",
+  "milk_of_magnesium.options.dim": "维度",
+  "milk_of_magnesium.options.unit.blocks": "%s 方块",
+
+  "milk_of_magnesium.cloud_height.name": "云层高度",
+  "milk_of_magnesium.cloud_height.tooltip": "提高云层高度。",
+  "milk_of_magnesium.fog.name": "启用雾",
+  "milk_of_magnesium.fog.tooltip": "关掉主世界所有的雾。",
+
+  "milk_of_magnesium.enable_max_entity_distance.name": "启用最大实体距离",
+  "milk_of_magnesium.enable_max_entity_distance.tooltip": "关闭实体剔除。",
+  "milk_of_magnesium.max_entity_distance.name": "最大实体渲染距离",
+  "milk_of_magnesium.max_entity_distance.tooltip": "隐藏并跳过渲染超出此范围的实体。这是巨大的性能提升，特别是在改造农场周围。",
+  "milk_of_magnesium.vertical_entity_distance.name": "垂直实体渲染距离",
+  "milk_of_magnesium.vertical_entity_distance.tooltip": "隐藏并跳过渲染此范围下的实体, 提高洞穴上方的性能. 理论上应设置为低于水平距离。",
+  "milk_of_magnesium.max_tile_distance.name": "最大实体方块渲染距离",
+  "milk_of_magnesium.max_tile_distance.tooltip": "隐藏此范围的实体方块. 巨大的性能提升, 尤其是在大型红石机器周围。",
+  "milk_of_magnesium.vertical_tile_distance.name": "垂直实体方块渲染距离",
+  "milk_of_magnesium.vertical_tile_distance.tooltip": "将实体方块隐藏在很多方块下面，提高在山洞上面的性能（如果你的机器出于某种原因在山洞里）。这个值最好设置得比水平距离要低。",
+
+  "milk_of_magnesium.ture_darkness.name": "真实黑暗",
+  "milk_of_magnesium.ture_darkness.tooltip": "使世界的其他部分更加真实地黑暗。不影响白天或火把的光。",
+  "milk_of_magnesium.ture_darkness_mode.name": "真实黑暗模式",
+  "milk_of_magnesium.ture_darkness_mode.tooltip": "控制真正黑暗的暗度。"
+}

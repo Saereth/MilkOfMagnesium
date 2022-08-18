@@ -1,0 +1,31 @@
+{
+  "milk_of_magnesium.key.zoom": "Zoom",
+  "milk_of_magnesium.key.category": "Milk of Magnesium",
+
+  "milk_of_magnesium.options.pitch_black": "Pitch Black",
+  "milk_of_magnesium.options.really_dark": "Really Dark",
+  "milk_of_magnesium.options.dark": "Dark",
+  "milk_of_magnesium.options.dim": "Dim",
+  "milk_of_magnesium.options.unit.blocks": "%s Blocks",
+
+  "milk_of_magnesium.cloud_height.name": "Cloud Height",
+  "milk_of_magnesium.cloud_height.tooltip": "Raises cloud height.",
+  "milk_of_magnesium.fog.name": "Enable fog",
+  "milk_of_magnesium.fog.tooltip": "Toggles off all fog in the overworld.",
+
+  "milk_of_magnesium.enable_max_entity_distance.name": "Enable Max Entity Distance",
+  "milk_of_magnesium.enable_max_entity_distance.tooltip": "Toggles off entity culling.",
+  "milk_of_magnesium.max_entity_distance.name": "Max Entity Distance",
+  "milk_of_magnesium.max_entity_distance.tooltip": "Hides and does not tick entities beyond this many blocks. Huge performance increase, especially around modded farms.",
+  "milk_of_magnesium.vertical_entity_distance.name": "Vertical Entity Distance",
+  "milk_of_magnesium.vertical_entity_distance.tooltip": "Hides and does not tick entities underneath this many blocks, improving performance above caves. This should ideally be set lower than the horizontal distance.",
+  "milk_of_magnesium.max_tile_distance.name": "Max Tile Distance",
+  "milk_of_magnesium.max_tile_distance.tooltip": "Hides block entities beyond this many blocks. Huge performance increase, especially around lots of modded machines.",
+  "milk_of_magnesium.vertical_tile_distance.name": "Vertical Tile Distance",
+  "milk_of_magnesium.vertical_tile_distance.tooltip": "Hides block entities underneath this many blocks, improving performance above caves (if you have your machines in caves, for some reason). This should ideally be set lower than the horizontal distance.",
+
+  "milk_of_magnesium.ture_darkness.name": "True Darkness",
+  "milk_of_magnesium.ture_darkness.tooltip": "Makes the rest of the world more realistically dark. Does not effect daytime or torch light.",
+  "milk_of_magnesium.ture_darkness_mode.name": "True Darkness Mode",
+  "milk_of_magnesium.ture_darkness_mode.tooltip": "Controls how dark is considered true darkness."
+}
